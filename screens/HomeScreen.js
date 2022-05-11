@@ -1,15 +1,16 @@
 import { View, SafeAreaView, Text, TouchableOpacity, StyleSheet, Dimensions} from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
+import MHBnCAN from '../storage/MHBnCAN';
 
- function HomeScreen({navigation}) {
+ function HomeScreen({route,navigation}) {
   return(
 
     <View style={styles.container}>
        <View style={styles.buttonsCont}>
           <TouchableOpacity 
           style={styles.button}
-          onPress={()=>navigation.navigate("HymnListScreen")}
+          onPress={()=>navigation.navigate("HymnListScreen",{MHBnCAN})}
           >
                 <Text style={styles.buttonText}>METHODIST HYMNS AND CAN(NEW)</Text>
           </TouchableOpacity>

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, useWindowDimensions, FlatList } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, FlatList } from 'react-native'
 import React from 'react'
 import EnglishReadBlock from '../components/EnglishReadBlock';
 import TwiReadBlock from '../components/TwiReadBlock';
@@ -7,8 +7,8 @@ export default function HymnScreen() {
   const data = [
     {
       number: '1',
-      EnglishTitle: 'Title in french',
-      TwiTitle: 'Title in twi',
+      EnglishTitle: 'Title in french ',
+      TwiTitle: 'Title in twi Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl condimentum id venenatis a condimentum vitae sapien pellentesque habitant. Ut eu sem integer vitae justo eget magna fermentum iaculis. Nullam non nisi est sit amet facilisis. Adipiscing vitae proin sagittis nisl rhoncus. Vel quam elementum pulvinar etiam. In vitae turpis massa sed elementum. Erat velit scelerisque in dictum non. Erat nam at lectus urna duis convallis. Aenean et tortor at risus viverra adipiscing at in tellus. Nisi est sit amet facilisis magna etiam tempor orci. Nunc sed augue lacus viverra vitae. Malesuada pellentesque elit eget gravida cum. Volutpat ac tincidunt vitae semper quis lectus. Non enim praesent elementum facilisis leo vel fringilla. Aliquet nibh praesent tristique magna sit amet purus. Sed odio morbi quis commodo.',
 
     },
     {
@@ -195,23 +195,18 @@ const styles = StyleSheet.create({
     },
     subContainer:{
         flexDirection:'row',
-        justifyContent:'center',
         alignItems:'center',
-        width:400,
+        width:Dimensions.get("screen").width
     },
     engHymnContainer:{
         borderRightColor:"darkgrey",
         borderRightWidth:1,
-        minWidth:0,
-        flex:1,
 
 
     },
     twiHymnContainer:{
         borderLeftColor:"darkgrey",
         borderLeftWidth:1,
-        minWidth:0,
-        flex:1,
 
     },
     titleContainer:{

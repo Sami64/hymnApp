@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import LoadingScreen from './screens/LoadingScreen';
 import HomeScreen from './screens/HomeScreen';
 import HymnListScreen from './screens/HymnListScreen';
 import HymnScreen from './screens/HymnScreen';
@@ -23,7 +22,7 @@ export default function App({navigation}) {
           headerShown:false,
           cardStyle:{
             backgroundColor:"white",
-            marginTop:160,
+            paddingTop:160,
         }
         }}
         />
