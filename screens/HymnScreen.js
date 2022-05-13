@@ -147,14 +147,14 @@ export default function HymnScreen({ route }) {
 			<View style={styles.subContainer}>
 				<View style={styles.engHymnContainer}>
 					<View style={styles.titleContainer}>
-						<Text style={styles.title}>MHB {hymn[0]?.mhbNumber}</Text>
+						<Text style={styles.title}>MHB {hymn[0]?.mhb.number}</Text>
 						<FlatList
 							data={data}
 							renderItem={({ item }) => {
 								return (
 									<EnglishReadBlock
-										number={item.number}
-										EnglishTitle={item.EnglishTitle}
+										number={item.mhb.number}
+										EnglishTitle={item.mhb.title}
 									/>
 								);
 							}}
@@ -164,8 +164,9 @@ export default function HymnScreen({ route }) {
 				</View>
 				<View style={styles.twiHymnContainer}>
 					<View style={styles.titleContainer}>
-						<Text style={styles.title}>CAN {hymn[0]?.canNumber}</Text>
+						<Text style={styles.title}>CAN {hymn[0]?.can.canNumber}</Text>
 						<FlatList
+						
 							data={data}
 							renderItem={({ item }) => {
 								return (

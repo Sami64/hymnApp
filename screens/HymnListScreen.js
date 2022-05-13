@@ -190,7 +190,7 @@ export default function HymnListScreen({ navigation }) {
 							}
 						>
 							<View>
-								<Text>{item.titleEnglish}</Text>
+								<Text>{item.mhb.title}</Text>
 							</View>
 						</TouchableOpacity>
 					)}
