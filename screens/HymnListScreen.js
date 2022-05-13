@@ -1,6 +1,5 @@
 import {
 	View,
-	SafeAreaView,
 	Text,
 	FlatList,
 	Dimensions,
@@ -9,6 +8,7 @@ import {
 	TouchableOpacity,
 } from "react-native";
 import React, { useState, useEffect } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 import MHBnCAN from "../storage/MHBnCAN";
 import hymnals from "../storage/hymns";
 import { Searchbar } from "react-native-paper";
@@ -185,12 +185,15 @@ export default function HymnListScreen({ navigation }) {
 					data={hymns}
 					renderItem={({ item }) => (
 						<TouchableOpacity
+							style={styles.blockcontainer}
 							onPress={() =>
-								navigation.navigate("HymnScreen", { id: item.id, hymns: hymns })
+								navigation.navigate("HymnScreen", { id: item?.id, hymns: hymns })
 							}
 						>
-							<View>
-								<Text>{item.mhb.title}</Text>
+							<Text style={styles.blocknumber}>{item.mhb?.number}</Text>
+							<View style={styles.blocktitle}>
+								<Text style={styles.blocktitleEnglish}>{item.mhb?.title}</Text>
+								<Text style={styles.blocktitleTwi}>{item.can?.title}</Text>
 							</View>
 						</TouchableOpacity>
 					)}
@@ -229,13 +232,16 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		borderBottomColor: "gray",
 		borderTopColor: "gray",
+		paddingLeft: 15,
+		paddingRight: 15,
 		borderTopWidth: 1,
 		borderBottomWidth: 1,
 		width: Dimensions.get("screen").width,
 		height: 65,
 	},
 	blocknumber: {
-		fontSize: 18,
+		fontSize: 20,
+		fontWeight: "bold",
 	},
 	blocktitle: {
 		flexDirection: "column",

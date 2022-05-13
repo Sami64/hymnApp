@@ -1,12 +1,12 @@
 import {
 	View,
-	SafeAreaView,
 	Text,
 	TouchableOpacity,
 	StyleSheet,
 	Dimensions,
 } from "react-native";
 import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign } from "@expo/vector-icons";
 import MHBnCAN from "../storage/MHBnCAN";
 
